@@ -1,0 +1,95 @@
+.chapters_backBtn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.flashCount {
+  font-size: 23px;
+  text-transform: capitalize;
+}
+.chapters_backBtn:hover {
+  background-color: #c0392b;
+}
+.chapters_addVideobtn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.chapters_addVideobtn:hover {
+  background-color: #45a049;
+}
+.page_title {
+  display: flex;
+  justify-content: space-between;
+}
+.button_container {
+  margin-top: 15px;
+  display: flex;
+  gap: 30px;
+}
+.flashcardContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flashcard {
+  background-image: linear-gradient(
+    -225deg,
+    #9efbd3 0%,
+    #57e9f2 48%,
+    #45d4fb 100%
+  );
+  border: 1px solid #ddd;
+  width: 80%;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flashcard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.flashcard .h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
+.flashcard .p {
+  font-size: 1.2em;
+  color: #5b5b5b;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.btn_Img {
+  width: 20px;
+  height: 20px;
+}
+.loading {
+  text-align: center;
+}

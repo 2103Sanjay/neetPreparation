@@ -1,0 +1,44 @@
+.add_Btn {
+  background-color: #2ecc71; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.add_Btn:hover {
+  background-color: #27ae60; /* Darker Green */
+}
+.video_container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.btn_container {
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  display: flex;
+  gap: 30px;
+}
+.back_Btn {
+  background-color: #e74c3c; /* Red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.back_Btn {
+  background-color: #c0392b; /* Darker Red */
+}

@@ -1,0 +1,43 @@
+.video {
+  background-color: rgb(158, 156, 153);
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+.video_container {
+  margin: auto;
+  text-align: center;
+  border: 1px solid rgb(207, 207, 204);
+  padding: 20px;
+  text-decoration: none;
+  width: 300px;
+  height: 270px;
+  overflow: hidden;
+}
+.btn_delete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.title_container {
+  display: flex;
+  justify-content: space-between;
+}
+.title_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.remove_btn {
+  background-color: transparent;
+  border: none;
+}
+.play_btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

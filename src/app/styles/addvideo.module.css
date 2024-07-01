@@ -1,0 +1,89 @@
+.videoDiscriptions {
+  display: flex;
+  gap: 50px;
+}
+.input {
+  width: 400px;
+  height: 30px;
+  padding: 5px;
+  border: 0.5px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+.addvideo_btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+.addvideo_btn:hover {
+  background-color: #45a049;
+}
+.addvideo_btn:before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s;
+  pointer-events: none;
+}
+.addvideo_btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.addvideo_btn .span {
+  position: relative;
+  z-index: 1;
+}
+.codeDetails,
+.videoDetails,
+.thumbnailDetails {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-around;
+}
+.save_video_container {
+  text-align: center;
+}
+.addVideo_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.backBtnContainer {
+  display: flex;
+  float: right;
+  margin-top: 50px;
+}
+.btnBack {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btnBack:hover {
+  background-color: #c0392b;
+}

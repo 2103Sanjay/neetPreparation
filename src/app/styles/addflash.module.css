@@ -1,0 +1,77 @@
+.inputOverall {
+  display: flex;
+  gap: 200px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input_def {
+  width: 400px;
+  height: 300px;
+  padding: 5px;
+  border: 0.5px solid black;
+  font-size: 14px;
+  font-weight: bold;
+}
+.input {
+  width: 400px;
+  height: 30px;
+  padding: 5px;
+  border: 0.5px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+.inputcodeContainer,
+.flashinputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.btn_container {
+  text-align: center;
+}
+.addFlash {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+.addFlash:hover {
+  background-color: #45a049;
+}
+.backbtn_container {
+  display: flex;
+  float: right;
+}
+.btnBack {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btnBack:hover {
+  background-color: #c0392b;
+}

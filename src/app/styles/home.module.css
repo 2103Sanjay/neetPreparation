@@ -1,0 +1,89 @@
+.containerHome {
+  display: flex;
+  gap: 50px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.logoutBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #8e44ad; /* Purple color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #7d3c98;
+}
+.logoutBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(183, 80, 80, 0.5);
+}
+.logoutBtn:active {
+  background-color: #ff0000;
+}
+.page_title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  letter-spacing: 4px;
+}
+.homeImages {
+  width: 340px;
+  height: 220px;
+  border-radius: 20px;
+}
+.subjectLink {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+.subjectContainer {
+  background-color: rgb(244, 240, 240);
+  padding: 20px;
+  border-radius: 30px;
+  transition: all 0.6s;
+}
+
+.subjectContainer:hover {
+  transform: translateY(-10px);
+}
+
+.class_btn_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.class_btn {
+  width: 200px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+.class_btn:hover {
+  background-color: #45a049;
+}
