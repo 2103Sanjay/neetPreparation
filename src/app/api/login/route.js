@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connectMongoDB from "../../../../libs/mongodb";
-import Admin from "../../../../models/admin"; 
+import Admin from "../../../../models/admin";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -34,7 +34,11 @@ export async function POST(req) {
       success: true,
     });
 
-    response.cookies.set("token", token, { httpOnly: true });
+    response.cookies.set("token", token, {
+      httpOnly: true,
+      maxAge: 3600, 
+    });
+
     return response;
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

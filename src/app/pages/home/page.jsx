@@ -6,9 +6,17 @@ import physicsImage from "../../../../public/physics.jpg";
 import chemistryImage from "../../../../public/chemistry.jpg";
 import styles from "../../styles/home.module.css";
 import LogoutBtn from "@/app/components/LogoutBtn";
-
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.reload();
+    }, 3600000); 
+
+    return () => clearTimeout(timer); 
+  }, []);
+
   return (
     <div className={styles.title}>
       <div>
