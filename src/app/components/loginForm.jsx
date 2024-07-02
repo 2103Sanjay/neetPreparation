@@ -4,7 +4,6 @@ import style from "../../app/styles/login.module.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-
 export default function Home() {
   const router = useRouter();
   const [admin, setAdmin] = useState({
@@ -12,20 +11,27 @@ export default function Home() {
     password: "",
   });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
+    if (!admin.email || !admin.password) {
+      alert("ALL INPUTS ARE REQUIRED");
+    }
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/login",
+        "http://localhost:3000/api/admin/login",
         admin
       );
       router.push("/pages/home");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
       console.log("LOGIN FAILED");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -56,8 +62,12 @@ export default function Home() {
             />
           </div>
           {error && <p className={style.error}>{error}</p>}
-          <button type="submit" className={style.btn_login}>
-            Login
+          <button
+            type="submit"
+            className={style.btn_login}
+            disabled={isLoading}
+          >
+            {isLoading ? "Logging in..." : "Login"}
           </button>
         </form>
       </div>

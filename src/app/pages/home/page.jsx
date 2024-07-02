@@ -1,21 +1,23 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import biologyImage from "../../../../public/biology.jpg";
 import physicsImage from "../../../../public/physics.jpg";
 import chemistryImage from "../../../../public/chemistry.jpg";
 import styles from "../../styles/home.module.css";
 import LogoutBtn from "@/app/components/LogoutBtn";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.reload();
-    }, 3600000); 
+  const [loading, setLoading] = useState(false);
 
-    return () => clearTimeout(timer); 
-  }, []);
+  const handleButtonClick = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
 
   return (
     <div className={styles.title}>
@@ -25,7 +27,12 @@ export default function Home() {
         </p>
         <LogoutBtn />
       </div>
-      <div className={styles.containerHome}>
+      {loading && <div className={styles.backdrop}></div>}
+      {loading && <div className={styles.loader}></div>}
+
+      <div
+        className={`${styles.containerHome} ${loading ? styles.blurred : ""}`}
+      >
         <div className={styles.subjectContainer}>
           <div className={styles.subjectLink}>
             <Image
@@ -37,10 +44,22 @@ export default function Home() {
           </div>
           <div className={styles.class_btn_container}>
             <Link href="/pages/chapters/PHYC11">
-              <button className={styles.class_btn}>CLASS 11</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 11
+              </button>
             </Link>
             <Link href="/pages/chapters/PHYC12">
-              <button className={styles.class_btn}>CLASS 12</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 12
+              </button>
             </Link>
           </div>
         </div>
@@ -55,10 +74,22 @@ export default function Home() {
           </div>
           <div className={styles.class_btn_container}>
             <Link href="/pages/chapters/CHEC11">
-              <button className={styles.class_btn}>CLASS 11</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 11
+              </button>
             </Link>
             <Link href="/pages/chapters/CHEC12">
-              <button className={styles.class_btn}>CLASS 12</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 12
+              </button>
             </Link>
           </div>
         </div>
@@ -73,10 +104,22 @@ export default function Home() {
           </div>
           <div className={styles.class_btn_container}>
             <Link href="/pages/chapters/BIOC11">
-              <button className={styles.class_btn}>CLASS 11</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 11
+              </button>
             </Link>
             <Link href="/pages/chapters/BIOC12">
-              <button className={styles.class_btn}>CLASS 12</button>
+              <button
+                className={styles.class_btn}
+                onClick={handleButtonClick}
+                disabled={loading}
+              >
+                CLASS 12
+              </button>
             </Link>
           </div>
         </div>

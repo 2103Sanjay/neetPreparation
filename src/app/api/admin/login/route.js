@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import connectMongoDB from "../../../../libs/mongodb";
-import Admin from "../../../../models/admin";
+import connectMongoDB from "../../../../../libs/mongodb";
+import Admin from "../../../../../models/admin";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -36,7 +36,7 @@ export async function POST(req) {
 
     response.cookies.set("token", token, {
       httpOnly: true,
-      maxAge: 3600, 
+      maxAge: 3600,
     });
 
     return response;
