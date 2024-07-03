@@ -2,6 +2,11 @@
   text-decoration: none;
   color: black;
 }
+.chapterName {
+  text-decoration: underline;
+  color: #0056b3;
+  text-transform: uppercase;
+}
 .chapterVideoContainer {
   display: flex;
   gap: 50px;
@@ -80,6 +85,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
+  align-self: center;
 }
 .chapters_backBtn:hover {
   background-color: #c0392b;
@@ -96,6 +102,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
+  align-self: center;
 }
 .chapters_addVideobtn:hover {
   background-color: #45a049;
@@ -147,9 +154,9 @@
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  height: 38px;
   cursor: pointer;
   border-radius: 4px;
+  align-self: center;
 }
 .chapters_addFlash:hover {
   background-color: #8f408c;
@@ -223,4 +230,37 @@
 
 .btn_copy:hover {
   background-color: #0056b3;
+}
+
+/* Add these styles to your chapterVideos.module.css */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

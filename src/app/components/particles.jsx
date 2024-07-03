@@ -12,7 +12,7 @@ const ParticlesComponent = (props) => {
     () => ({
       background: {
         color: {
-          value: "#0000",
+          value: "#2d3674",
         },
       },
       fpsLimit: 120,
@@ -33,7 +33,7 @@ const ParticlesComponent = (props) => {
             duration: 15,
           },
           grab: {
-            distance: 150,
+            distance: 100,
           },
         },
       },
@@ -55,15 +55,15 @@ const ParticlesComponent = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 5,
+          speed: 3,
           straight: false,
         },
         number: {
           density: {
             enable: true,
-            area: 500,
+            area: 800,
           },
-          value: 150,
+          value: 50,
         },
         opacity: {
           value: 1.0,

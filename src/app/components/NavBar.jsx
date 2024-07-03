@@ -7,7 +7,7 @@ export default function NavBar() {
     <nav>
       <div className={style.nav_container}>
         <div>
-          <Link href={"/"}>
+          <Link href={"/pages/home"}>
             <Image src={Logo} className={style.logo} alt="logo" />
           </Link>
         </div>

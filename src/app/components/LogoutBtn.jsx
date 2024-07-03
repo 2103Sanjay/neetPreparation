@@ -13,6 +13,7 @@ export default function LogoutBtn() {
     setLoading(true);
     try {
       await axios.get("http://localhost:3000/api/admin/logout");
+      localStorage.removeItem("timer");
       router.push("/");
     } catch (error) {
       console.log("Failed to logout");

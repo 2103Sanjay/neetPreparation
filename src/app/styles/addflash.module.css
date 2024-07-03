@@ -6,6 +6,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.chapterName {
+  text-decoration: underline;
+  color: #2f72df;
+}
 .inputContainer {
   display: flex;
   flex-direction: column;

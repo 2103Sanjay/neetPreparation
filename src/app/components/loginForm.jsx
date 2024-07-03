@@ -40,25 +40,25 @@ export default function Home() {
       <div className={style.login_container}>
         <p className={style.page_title}>TUTOR LPT ADMIN</p>
         <h2 className={style.login_title}>Login</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={style.login_form}>
           <div className={style.div}>
-            <label htmlFor="email">Email</label>
             <input
               onChange={(e) => setAdmin({ ...admin, email: e.target.value })}
               type="email"
               id="email"
               name="email"
               className={style.input}
+              placeholder="Email"
             />
           </div>
           <div className={style.div}>
-            <label htmlFor="password">Password</label>
             <input
               onChange={(e) => setAdmin({ ...admin, password: e.target.value })}
               type="password"
               id="password"
               name="password"
               className={style.input}
+              placeholder="Password"
             />
           </div>
           {error && <p className={style.error}>{error}</p>}

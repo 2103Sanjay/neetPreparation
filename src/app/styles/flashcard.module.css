@@ -10,6 +10,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
+  align-self: center;
 }
 .flashCount {
   font-size: 23px;
@@ -17,6 +18,10 @@
 }
 .chapters_backBtn:hover {
   background-color: #c0392b;
+}
+.chapterName {
+  text-decoration: underline;
+  color: #2f72df;
 }
 .chapters_addVideobtn {
   background-color: #4caf50;
@@ -30,6 +35,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
+  align-self: center;
 }
 .chapters_addVideobtn:hover {
   background-color: #45a049;
@@ -86,10 +92,47 @@
   justify-content: flex-end;
   gap: 30px;
 }
+.editBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 .btn_Img {
   width: 20px;
   height: 20px;
 }
 .loading {
   text-align: center;
+}
+/* Add these styles to your flashcard.module.css if not already present */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

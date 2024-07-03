@@ -10,10 +10,9 @@
   align-items: center;
   padding: 30px;
   border-radius: 15px;
-  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
 .page_title {
   font-size: 36px;
   font-weight: bold;
@@ -42,6 +41,34 @@
   color: #555;
 }
 
+@keyframes focusAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typingAnimation {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+}
+.login_form {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .input {
   width: 300px;
   height: 30px;
@@ -49,12 +76,31 @@
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  font-size: 16px;
+  color: #333;
 }
 
 .input:focus {
   border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+  outline: none;
+  animation: focusAnimation 0.6s ease-in-out forwards;
+}
+.input::placeholder {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.input:focus:not(:placeholder-shown) {
+  animation: typingAnimation 0.8s infinite;
 }
 
 .btn_login {
@@ -80,7 +126,7 @@
   color: red;
   font-weight: bold;
   margin-top: 10px;
-  animation: shake 0.3s ease; /* Example of shake animation */
+  animation: shake 0.3s ease;
 }
 
 @keyframes shake {

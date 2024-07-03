@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import style from "../../../styles/chapters.module.css";
 import Link from "next/link";
 import LogoutBtn from "@/app/components/LogoutBtn";
+import { useRouter } from "next/navigation";
 
 async function fetchChapters(syllabusCodeP, setChapters, setChapterCodes) {
   try {
@@ -34,6 +35,11 @@ export default function SyllabusCode({ params }) {
   const [chapters, setChapters] = useState([]);
   const [chapterCodes, setChapterCodes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isLinkClicked, setIsLinkClicked] = useState(false);
+  const router = useRouter();
+
+  const subject = syllabusCodeP.slice(0, 3); // Declare subject and Class here
+  const Class = syllabusCodeP.slice(4, 6);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,12 +50,25 @@ export default function SyllabusCode({ params }) {
     fetchData();
   }, [syllabusCodeP]);
 
+  const handleChapterClick = (href) => {
+    setIsLinkClicked(true);
+    router.push(href);
+  };
+
   return (
     <div>
+      {isLinkClicked && (
+        <div className={style.loadingOverlay}>
+          <div className={style.spinner}></div>
+        </div>
+      )}
       <p className={style.page_title}>SELECT THE CHAPTER YOU NEED TO MANAGE</p>
       <LogoutBtn />
       <div className={style.chapters_head}>
-        <h3>Chapters for Syllabus Code: {syllabusCodeP}</h3>
+        <p className={style.chapter_detail}>
+          {subject} Chapters for Class {Class}
+          <sup>th</sup>
+        </p>
         <Link href={"../../../pages/home"}>
           <button className={style.chapters_backBtn}>BACK</button>
         </Link>
@@ -63,15 +82,17 @@ export default function SyllabusCode({ params }) {
           </div>
         ) : (
           chapters.map((chapter, index) => (
-            <Link
-              href={`${syllabusCodeP}/${chapterCodes[index]}`}
+            <a
+              onClick={() =>
+                handleChapterClick(`${syllabusCodeP}/${chapterCodes[index]}`)
+              }
               className={style.link}
               key={index}
             >
               <p className={style.chapters}>
                 {index + 1}. {chapter}
               </p>
-            </Link>
+            </a>
           ))
         )}
       </div>

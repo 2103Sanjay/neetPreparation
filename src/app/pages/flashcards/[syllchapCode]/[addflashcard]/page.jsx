@@ -105,7 +105,10 @@ export default function AddFlashcard({ params }) {
 
   return (
     <div>
-      <h1>ADD BRAND NEW FLASH CARD</h1>
+      <h1>
+        Add A New Flash Card In Chapter{" "}
+        <span className={style.chapterName}>{chapterName}</span>
+      </h1>
       <LogoutBtn />
       <div className={style.backbtn_container}>
         <Link href={`../../../../../pages/flashcards/${syllchapCode}`}>
